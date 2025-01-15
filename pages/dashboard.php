@@ -4,7 +4,9 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark"><!-- Dashboard v2 --></h1>
+            <h1 class="m-0 text-dark">
+              <!-- Dashboard v2 -->
+            </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -19,18 +21,6 @@
 
     <!-- Main content -->
     <section class="content" style="min-height:80vh;">
-     <div  class="head">
-
-      <div class="info-box bg-cards-007">
-              <div class="info-box-content  text-center">
-                
-                <span class="sell"><p >Mayuri K is the freelancer working on website designing and web based application development. <br>She provide service of website designing and web application development worldwide. she also provide Source code for Academic projects and commercial projects.
-</p></span><b>If you have any requirement related to Project Development :<a href="https://mayurik.com">Contact here</a></b><br>
-                
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-</div>
       <div class="container-fluid">
         <!-- .row -->
         <div class="row">
@@ -40,13 +30,13 @@
               <div class="info-box-content">
                 <span class="info-box-text">Total customer</span>
                 <span class="info-box-number">
-                  <?php 
-                    echo $all_customer = $obj->total_count('member');
+                  <?php
+                  echo $all_customer = $obj->total_count('member');
                   ?>
                 </span>
               </div>
               <span class="info-box-icon "><i class="material-symbols-outlined">
-                 supervisor_account</i></span>
+                  supervisor_account</i></span>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -58,13 +48,13 @@
             <div class="info-box  bg-success">
               <div class="info-box-content">
                 <span class="info-box-text">Total Suppliers</span>
-                <span class="info-box-number"> 
-                  <?php 
-                    echo $all_customer = $obj->total_count('suppliar');
+                <span class="info-box-number">
+                  <?php
+                  echo $all_customer = $obj->total_count('suppliar');
                   ?>
-                  </span>
+                </span>
               </div>
-               <span class="info-box-icon elevation-1"><i class="material-symbols-outlined">group</i></span>
+              <span class="info-box-icon elevation-1"><i class="material-symbols-outlined">group</i></span>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -72,20 +62,20 @@
 
           <div class="col-xl-3 col-xxl-6 col-sm-6">
             <div class="info-box bg-info ">
-             
+
               <div class="info-box-content">
                 <span class="info-box-text">Total sells</span>
-                <span class="info-box-number"> 
-                    
-                          <?php  
-                      $stmt = $pdo->prepare("SELECT SUM(`sub_total`) FROM `invoice`");
-                      $stmt->execute();
-                      $res = $stmt->fetch(PDO::FETCH_NUM);
-                      echo $total_sell_amount =  $res[0];
+                <span class="info-box-number">
+
+                  <?php
+                  $stmt = $pdo->prepare("SELECT SUM(`sub_total`) FROM `invoice`");
+                  $stmt->execute();
+                  $res = $stmt->fetch(PDO::FETCH_NUM);
+                  echo $total_sell_amount =  $res[0];
                   ?>
-                  </span>
+                </span>
               </div>
-               <span class="info-box-icon elevation-1"><i class="material-symbols-outlined">sell</i></span>
+              <span class="info-box-icon elevation-1"><i class="material-symbols-outlined">sell</i></span>
 
               <!-- /.info-box-content -->
             </div>
@@ -95,19 +85,20 @@
 
           <div class="col-xl-3 col-xxl-6 col-sm-6">
             <div class="info-box bg-secondary ">
-              
+
               <div class="info-box-content">
                 <span class="info-box-text">Total purchase</span>
-                <span class="info-box-number"> 
-                         <?php  
-                      $stmt = $pdo->prepare("SELECT SUM(`purchase_subtotal`) FROM `purchase_products`");
-                      $stmt->execute();
-                      $res = $stmt->fetch(PDO::FETCH_NUM);
-                      echo $total_purchase =  $res[0];
+                <span class="info-box-number">
+                  <?php
+                  $stmt = $pdo->prepare("SELECT SUM(`purchase_subtotal`) FROM `purchase_products`");
+                  $stmt->execute();
+                  $res = $stmt->fetch(PDO::FETCH_NUM);
+                  echo $total_purchase =  $res[0];
                   ?>
-                  </span>
+                </span>
               </div>
-              <span class="info-box-icon elevation-1"><i class="material-symbols-outlined">payments</i></span>
+              <span class="info-box-icon elevation-1"><i
+                  class="material-symbols-outlined">payments</i></span>
 
               <!-- /.info-box-content -->
             </div>
@@ -149,25 +140,25 @@
               <div class="info-box-content  text-center text-white">
                 <h2 class="info-box-text">Today</h2>
                 <span class="sell">Sell:
-                    <?php 
-                      $today = date('Y-m-d');
-                        $stmt = $pdo->prepare("SELECT SUM(`net_total`) FROM `invoice` WHERE `order_date` = '$today'");
-                        $stmt->execute();
-                        $res = $stmt->fetch(PDO::FETCH_NUM);
-                        echo $res[0];
+                  <?php
+                  $today = date('Y-m-d');
+                  $stmt = $pdo->prepare("SELECT SUM(`net_total`) FROM `invoice` WHERE `order_date` = '$today'");
+                  $stmt->execute();
+                  $res = $stmt->fetch(PDO::FETCH_NUM);
+                  echo $res[0];
 
-                        ?>
-                    
+                  ?>
+
                 </span><br>
                 <span class="buy">Buy:
-                    <?php 
-                      $today = date('Y-m-d');
-                        $stmt = $pdo->prepare("SELECT SUM(`purchase_net_total`) FROM `purchase_products` WHERE `purchase_date` = '$today'");
-                        $stmt->execute();
-                        $res = $stmt->fetch(PDO::FETCH_NUM);
-                        echo $res[0];
+                  <?php
+                  $today = date('Y-m-d');
+                  $stmt = $pdo->prepare("SELECT SUM(`purchase_net_total`) FROM `purchase_products` WHERE `purchase_date` = '$today'");
+                  $stmt->execute();
+                  $res = $stmt->fetch(PDO::FETCH_NUM);
+                  echo $res[0];
 
-                        ?>
+                  ?>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -180,26 +171,26 @@
               <div class="info-box-content  text-center">
                 <h2 class="info-box-text">Monthly</h2>
                 <span class="sell">Sell:
-                  <?php 
-                      $start_data = date('Y-m-01-');
-                      $end_date =   date('Y-m-t');
-                        $stmt = $pdo->prepare("SELECT SUM(`net_total`) FROM `invoice` WHERE `order_date` BETWEEN '$start_data' AND  '$end_date' ");
-                        $stmt->execute();
-                        $res = $stmt->fetch(PDO::FETCH_NUM);
-                        echo $res[0];
+                  <?php
+                  $start_data = date('Y-m-01-');
+                  $end_date =   date('Y-m-t');
+                  $stmt = $pdo->prepare("SELECT SUM(`net_total`) FROM `invoice` WHERE `order_date` BETWEEN '$start_data' AND  '$end_date' ");
+                  $stmt->execute();
+                  $res = $stmt->fetch(PDO::FETCH_NUM);
+                  echo $res[0];
 
-                        ?>
-                 </span><br>
+                  ?>
+                </span><br>
                 <span class="buy">Buy:
-                  <?php 
-                       $start_data = date('Y-m-01-');
-                      $end_date =   date('Y-m-t');
-                        $stmt = $pdo->prepare("SELECT SUM(`purchase_net_total`) FROM `purchase_products` WHERE `purchase_date` BETWEEN '$start_data' AND  '$end_date'");
-                        $stmt->execute();
-                        $res = $stmt->fetch(PDO::FETCH_NUM);
-                        echo $res[0];
+                  <?php
+                  $start_data = date('Y-m-01-');
+                  $end_date =   date('Y-m-t');
+                  $stmt = $pdo->prepare("SELECT SUM(`purchase_net_total`) FROM `purchase_products` WHERE `purchase_date` BETWEEN '$start_data' AND  '$end_date'");
+                  $stmt->execute();
+                  $res = $stmt->fetch(PDO::FETCH_NUM);
+                  echo $res[0];
 
-                        ?>
+                  ?>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -207,16 +198,16 @@
             <!-- /.info-box -->
           </div>
           <!-- /.col -->
-         
-          
+
+
           <!-- fix for small devices only -->
           <div class="clearfix hidden-md-up"></div>
-          
+
         </div>
         <!-- /.row -->
         <div class="row">
           <div class="col-md-6 col-lg-6">
-             <div class="card">
+            <div class="card">
               <div class="card-header">
                 <b>Factory product stock Alert</b>
               </div>
@@ -232,22 +223,22 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <?php 
-                          $stmt = $pdo->prepare("SELECT * FROM `factory_products` WHERE `quantity` <= `alert_quantity` ; ");
-                          $stmt->execute();
-                          $res = $stmt->fetchAll(PDO::FETCH_OBJ);
-                          foreach ($res as $product) {
-                              ?>
-                              <tr>
-                                <td>1</td>
-                                <td><?=$product->product_id;?></td>
-                                <td><?=$product->product_name;?></td>
-                                <td><?=$product->quantity;?></td>
-                              </tr>
-                              <?php 
-                          }
-                          ?>
-                     </tbody>
+                      <?php
+                      $stmt = $pdo->prepare("SELECT * FROM `factory_products` WHERE `quantity` <= `alert_quantity` ; ");
+                      $stmt->execute();
+                      $res = $stmt->fetchAll(PDO::FETCH_OBJ);
+                      foreach ($res as $product) {
+                      ?>
+                        <tr>
+                          <td>1</td>
+                          <td><?= $product->product_id; ?></td>
+                          <td><?= $product->product_name; ?></td>
+                          <td><?= $product->quantity; ?></td>
+                        </tr>
+                      <?php
+                      }
+                      ?>
+                    </tbody>
                   </table>
                 </div>
               </div>
@@ -270,29 +261,29 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <?php 
-                          $stmt = $pdo->prepare("SELECT * FROM `products` WHERE `quantity` <= `alert_quanttity` ; ");
-                          $stmt->execute();
-                          $res = $stmt->fetchAll(PDO::FETCH_OBJ);
+                      <?php
+                      $stmt = $pdo->prepare("SELECT * FROM `products` WHERE `quantity` <= `alert_quanttity` ; ");
+                      $stmt->execute();
+                      $res = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-                          
-                         
-                          foreach ($res as $product) {
-                              ?>
-                              <tr>
-                                <td>1</td>
-                                <td><?=$product->product_id;?></td>
-                                <td><?=$product->product_name;?></td>
-                                <td><?=$product->quantity;?></td>
-                              </tr>
-                              <?php 
-                          }
-                         
-                          
 
-                        
-                       ?>
-                     
+
+                      foreach ($res as $product) {
+                      ?>
+                        <tr>
+                          <td>1</td>
+                          <td><?= $product->product_id; ?></td>
+                          <td><?= $product->product_name; ?></td>
+                          <td><?= $product->quantity; ?></td>
+                        </tr>
+                      <?php
+                      }
+
+
+
+
+                      ?>
+
                     </tbody>
                   </table>
                 </div>
@@ -300,7 +291,8 @@
             </div>
           </div>
         </div>
-      </div><!--/. container-fluid -->
+      </div>
+      <!--/. container-fluid -->
     </section>
     <!-- /.content -->
   </div>
