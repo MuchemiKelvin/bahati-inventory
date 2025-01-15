@@ -1,7 +1,7 @@
 <?php
 require_once 'app/init.php';
 if ($Ouser->is_login() == false) {
-  header("location:login.php");
+    header("location:login.php");
 }
 $actual_link = explode('=', "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
 $actual_link = end($actual_link);
@@ -46,9 +46,9 @@ $actual_link = end($actual_link);
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
     <style>
-    .select2-container .select2-selection--single {
-        height: 37px;
-    }
+        .select2-container .select2-selection--single {
+            height: 37px;
+        }
     </style>
 </head>
 

@@ -3,7 +3,7 @@
 
     <!-- Brand Logo -->
     <a href="" class="brand-link">
-        <img src="dist/img/log.jpg" alt="logo" class="brand-image ">
+        <img src="dist/img/logo.jpg" alt="logo" class="brand-image ">
 
     </a>
 
