@@ -3,7 +3,7 @@
 date_default_timezone_set("Asia/Kolkata");
 
 // define the site root
-define('SITE_ROOT', 'http://localhost/bahati%20inventory/');
+define('SITE_ROOT', 'http://localhost/bahati-inventory/');
 
 
 
